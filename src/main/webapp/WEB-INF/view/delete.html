@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>create</title>
+</head>
+<body>
+<h3><a th:href="@{/home}"><u th:text="#{back}"></u></a></h3>
+<br>
+<br>
+<form onsubmit="return confirm('are you sure')" th:action="@{/delete-customer}" th:object="${customer}" method="post">
+    <fieldset>
+        <legend><h3 th:text="#{check}"></h3></legend>
+        <table border="1">
+            <input type="hidden" th:field="*{id}">
+            <tr>
+                <th th:text="#{name}"></th>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{age}"></th>
+                <td><input type="text" th:field="*{age}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{address}"></th>
+                <td><input type="text" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <th th:text="#{email}"></th>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td><button type="submit"><u th:text="#{delete}"></u></button></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

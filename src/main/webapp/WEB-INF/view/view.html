@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>view</title>
+</head>
+<fieldset>
+    <h3><a th:href="@{/home}"><u th:text="#{back}"></u></a></h3>
+    <br>
+    <br>
+    <legend><h3 th:text="#{view}"></h3></legend>
+    <br>
+    <table border="1">
+        <tr>
+            <th th:text="#{name}"></th>
+            <td th:text="${customer.name}"></td>
+        </tr>
+        <tr>
+            <th th:text="#{age}"></th>
+            <td th:text="${customer.age}"></td>
+        </tr>
+        <tr>
+            <th th:text="#{address}"></th>
+            <td th:text="${customer.address}"></td>
+        </tr>
+        <tr>
+            <th th:text="#{email}"></th>
+            <td th:text="${customer.email}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>
+                <a th:href="@{/update/__${customer.id}__}"><p th:text="'|'+#{edit}"></p></a>
+            </td>
+            <td>|</td>
+            <td>
+                <a th:href="@{/delete/__${customer.id}__}"><p th:text="#{delete}+'|'"></p></a>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+</body>
+</html>
